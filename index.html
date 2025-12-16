@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cibersegurança</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Bloco 1: Formulário -->
+        <form class="formulario" id="formulario">
+            <h1>Formulario</h2>
+            <div class="card">
+                <h2>Qual seu nome?</h2>
+                <input type="text" name="primeiroNome" required placeholder="Digite seu primeiro nome">
+            </div>
+
+            <div class="card">
+                <h2>Qual horário do dia você mais usa o celular?</h2>
+                <div class="radio-group">
+                    <label><input type="radio" name="horario" value="Manhã" required> Manhã</label>
+                    <label><input type="radio" name="horario" value="Tarde" required> Tarde</label>
+                    <label><input type="radio" name="horario" value="Noite" required> Noite</label>
+                    <label><input type="radio" name="horario" value="Madrugada" required> Madrugada</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Você costuma clicar em links que recebe de amigos?</h2>
+                <div class="radio-group">
+                    <label><input type="radio" name="clicaLinks" value="Sim" required> Sim</label>
+                    <label><input type="radio" name="clicaLinks" value="Às vezes" required> Às vezes</label>
+                    <label><input type="radio" name="clicaLinks" value="Raramente" required> Raramente</label>
+                    <label><input type="radio" name="clicaLinks" value="Nunca" required> Nunca</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Qual nome você usa nas redes sociais?</h2>
+                <input type="text" name="nomeRedesSociais" required placeholder="Ex: @joao123, Maria Silva, etc.">
+            </div>
+
+            <div class="card">
+                <h2>Qual o modelo do seu celular?</h2>
+                <input type="text" name="modeloCelular" required placeholder="Ex: iPhone 14, Samsung Galaxy S23, etc.">
+            </div>
+
+            <div class="card">
+                <h2>Qual bairro ou região você costuma estar durante o dia?</h2>
+                <input type="text" name="bairroRegiao" required placeholder="Ex: Centro, Zona Leste, Bairro X, etc.">
+            </div>
+
+            <div class="card">
+                <h2>Qual aplicativo você mais usa no celular?</h2>
+                <div class="radio-group">
+                    <label><input type="radio" name="appFavorito" value="WhatsApp" required> WhatsApp</label>
+                    <label><input type="radio" name="appFavorito" value="Instagram" required> Instagram</label>
+                    <label><input type="radio" name="appFavorito" value="TikTok" required> TikTok</label>
+                    <label><input type="radio" name="appFavorito" value="YouTube" required> YouTube</label>
+                    <label><input type="radio" name="appFavorito" value="Facebook" required> Facebook</label>
+                    <label><input type="radio" name="appFavorito" value="Outro" required id="appOutro"> Outro</label>
+                </div>
+                <input type="text" name="appFavoritoOutro" id="appFavoritoOutroInput" placeholder="Digite qual aplicativo..." style="display: none; margin-top: 12px;">
+            </div>
+
+            <div class="card">
+                <h2>Onde você costuma fazer compras online?</h2>
+                <div class="radio-group">
+                    <label><input type="radio" name="lojaCompras" value="Shopee" required> Shopee</label>
+                    <label><input type="radio" name="lojaCompras" value="Amazon" required> Amazon</label>
+                    <label><input type="radio" name="lojaCompras" value="Mercado Livre" required> Mercado Livre</label>
+                    <label><input type="radio" name="lojaCompras" value="Shein" required> Shein</label>
+                    <label><input type="radio" name="lojaCompras" value="Outro" required id="lojaOutro"> Outro</label>
+                </div>
+                <input type="text" name="lojaComprasOutro" id="lojaComprasOutroInput" placeholder="Digite onde você compra..." style="display: none; margin-top: 12px;">
+            </div>
+
+            <div class="card">
+                <h2>Já teve o celular roubado ou perdido?</h2>
+                <div class="radio-group">
+                    <label><input type="radio" name="celularRoubado" value="Sim, roubado" required> Sim, roubado</label>
+                    <label><input type="radio" name="celularRoubado" value="Sim, perdido" required> Sim, perdido</label>
+                    <label><input type="radio" name="celularRoubado" value="Não" required> Não</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Com que frequência você usa Wi-Fi público?</h2>
+                <div class="radio-group">
+                    <label><input type="radio" name="wifiPublico" value="Todos os dias" required> Todos os dias</label>
+                    <label><input type="radio" name="wifiPublico" value="Algumas vezes por semana" required> Algumas vezes por semana</label>
+                    <label><input type="radio" name="wifiPublico" value="Raramente" required> Raramente</label>
+                    <label><input type="radio" name="wifiPublico" value="Nunca" required> Nunca</label>
+                </div>
+            </div>
+
+            <div class="card">
+                <button type="submit" class="btn-enviar">Enviar</button>
+            </div>
+        </form>
+
+        <!-- Bloco 2: Aviso Inicial -->
+        <div class="card aviso-inicial" id="avisoInicial">
+        </div>
+
+        <!-- Bloco 3: Resultado após envio -->
+        <div class="resultado" id="resultado" style="display: none;">
+            <!-- Aviso educacional no topo -->
+            <div class="card aviso-educacional">
+                <h2>📚 Aviso Educacional</h2>
+                <p><strong>Este formulário é para fins educacionais sobre cibersegurança.</strong></p>
+                <p>Nenhuma resposta será armazenada além da contagem total de pessoas que responderam ou não responderam.</p>
+                <p><strong>Não forneça informações sensíveis.</strong></p>
+            </div>
+            
+            <div class="card">
+                <h2>⚠️ ALERTA DE PRIVACIDADE</h2>
+                <div id="respostasUsuario" class="respostas-box"></div>
+            </div>
+
+            <div class="card aviso-final">
+                <div class="warning-icon">
+                    <i class="fas fa-skull"></i>
+                </div>
+                <h2>⚠️ ALERTA CRÍTICO: VOCÊ ACABOU DE SER VÍTIMA DE ENGENHARIA SOCIAL ⚠️</h2>
+                <div class="aviso-conteudo">
+                    <p class="destaque-inicial"><strong>Você acabou de entregar, de graça, um perfil completo sobre você.</strong></p>
+                    
+                    <p>Em menos de 2 minutos, você me deu tudo que eu precisava para:</p>
+                    
+                    <div class="risco-box">
+                        <h3>🔍 ENCONTRAR VOCÊ NA INTERNET</h3>
+                        <p>Com seu nome e nome das redes sociais, em 5 minutos eu consigo:</p>
+                        <ul>
+                            <li>Encontrar todos os seus perfis públicos (Instagram, Facebook, Twitter, LinkedIn)</li>
+                            <li>Ver suas fotos, onde você marca localização, quem são seus amigos</li>
+                            <li>Ler seus comentários e descobrir seus gostos, opiniões e fraquezas</li>
+                            <li>Procurar seu nome em bancos de dados vazados (vazamentos de empresas, sites hackeados)</li>
+                            <li>Encontrar seu e-mail, telefone e até endereço em listas públicas</li>
+                        </ul>
+                    </div>
+
+                    <div class="risco-box">
+                        <h3>💰 DESCOBRIR SEU PODER DE COMPRA</h3>
+                        <p>Seu celular e onde você compra revelam:</p>
+                        <ul>
+                            <li>Sua faixa de renda aproximada (iPhone 14 Pro = classe média-alta, celular básico = classe baixa-média)</li>
+                            <li>Seus hábitos de consumo e estilo de vida</li>
+                            <li>Se você é alvo fácil para golpes financeiros (Shopee/Shein = mais vulnerável, Amazon = mais cauteloso)</li>
+                            <li>Quanto você pode ser enganado em um golpe (pessoas com mais dinheiro = golpes maiores)</li>
+                        </ul>
+                    </div>
+
+                    <div class="risco-box">
+                        <h3>⏰ SABER QUANDO ATACAR</h3>
+                        <p>Seu horário de maior uso do celular é uma informação de OURO para golpistas:</p>
+                        <ul>
+                            <li>Eles sabem EXATAMENTE quando você está mais ativo e distraído</li>
+                            <li>Vão enviar mensagens de golpe nesses horários (maior chance de você cair)</li>
+                            <li>Sabem quando você está mais vulnerável e menos alerta</li>
+                            <li>Conseguem criar urgência perfeita ("URGENTE! Responda agora!" - e você está online, então responde rápido)</li>
+                        </ul>
+                    </div>
+
+                    <div class="risco-box">
+                        <h3>📍 RASTREAR SUA ROTINA</h3>
+                        <p>O bairro/região que você passa o dia revela:</p>
+                        <ul>
+                            <li>Onde você trabalha ou estuda</li>
+                            <li>Seus trajetos habituais</li>
+                            <li>Locais onde você costuma estar (facilita abordagens físicas ou golpes presenciais)</li>
+                            <li>Sua classe social e estilo de vida (bairro nobre vs periferia = perfis diferentes)</li>
+                        </ul>
+                    </div>
+
+                    <div class="risco-box">
+                        <h3>🎯 GOLPES PERSONALIZADOS</h3>
+                        <p>Com essas informações, um golpista pode:</p>
+                        <ul>
+                            <li>Criar mensagens falsas no aplicativo que você mais usa (WhatsApp, Instagram, etc.)</li>
+                            <li>Imitar amigos ou empresas que você confia</li>
+                            <li>Saber se você clica em links (se sim, você é alvo PRINCIPAL - vai receber mais golpes)</li>
+                            <li>Usar seu histórico de celular roubado/perdido para criar golpes sobre "recuperação de conta"</li>
+                            <li>Explorar seu uso de Wi-Fi público para interceptar suas comunicações</li>
+                        </ul>
+                    </div>
+
+                    <div class="risco-box">
+                        <h3>🧩 MONTAR O QUEBRA-CABEÇA COMPLETO</h3>
+                        <p>Juntando tudo isso com vazamentos comuns na internet:</p>
+                        <ul>
+                            <li>Seu nome + região + modelo do celular = encontrar seu CPF em vazamentos</li>
+                            <li>CPF + nome das redes sociais = acessar contas bancárias</li>
+                            <li>Perfil completo = engenharia social perfeita (golpista se passa por alguém que você conhece)</li>
+                            <li>Rotina + localização = rastreamento físico real</li>
+                        </ul>
+                    </div>
+
+                    <p class="destaque-final"><strong>E tudo isso você entregou voluntariamente, pensando que eram "apenas perguntas simples".</strong></p>
+                    
+                    <p class="reflexao">Pense: se um formulário simples conseguiu isso, imagine o que empresas, apps e sites fazem com seus dados todos os dias, sem você nem perceber.</p>
+                    
+                    <p class="destaque">⚠️ É assim que criminosos exploram migalhas digitais. Cada informação parece inofensiva, mas juntas formam um mapa completo da sua vida.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
